@@ -15,7 +15,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "npx git-cz",
-    "release": "npx standard-version && git push --follow-tags origin master"
+    "release": "npx standard-version && git push --follow-tags origin master",
+    "semantic-release": "npx semantic-release"
   },
   "husky": {
     "hooks": {
