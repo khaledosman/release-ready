@@ -1,0 +1,41 @@
+{
+  "name": "release-ready",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^2.1.0",
+    "standard-version": "^5.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "npx git-cz",
+    "release": "npx standard-version --dry-run",
+    "publish": "git push --follow-tags origin master && npm publish"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khaledosman/release-ready.git"
+  },
+  "author": "Khaled Osman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khaledosman/release-ready/issues"
+  },
+  "homepage": "https://github.com/khaledosman/release-ready#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
