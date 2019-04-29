@@ -14,8 +14,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "npx git-cz",
-    "release": "npx standard-version --dry-run",
-    "publish": "git push --follow-tags origin master && npm publish"
+    "release": "npx standard-version && git push --follow-tags origin master"
   },
   "husky": {
     "hooks": {
